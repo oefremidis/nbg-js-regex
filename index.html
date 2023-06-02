@@ -2,22 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regular Expression</title>
 </head>
 <body>
     
 <script>
-    const log = msg => console.log(msg);
-
 
     let str;
     let result;
     
     str = 'ThIs is just a text';
 
+    // match
+    // index --> start at
+    // null
+    // returns an array g --> array of results, all info otherwise
+    // result = str.match(/T/);
+    // result = str.match(/i/);
+    // result = str.match(/i/i);
+    // result = str.match(/k/);
+    // result = str.match(/i/g);
+    // console.log(result);
+    // console.log(result.index);
+    // console.log(result[0]);
 
+    // let regex = /is/ig;
+    // result = str.match(regex);
+    // console.log(result);
+
+    // regObj = new RegExp('Is', 'g');
+    // result = str.match(regObj);
+    // console.log(result);
+
+    // replace
+    // result = str.replace(/is/ig, 'IS');
+    // console.log(str, result);
+
+    // search
+    // result = str.search(/is/ig);
+    // result = str.search(/kk/);
+    // console.log(result);
+
+    // test
+    // --> boolean
+    // result = /Is/.test(str)
+    // console.log(result);
+
+
+    // classes
+    str = '+30(210)-12-34-567';
+    // /d -> digit
+    // console.log(str.match(/\+/));
+    // console.log(str.match(/\d/));
+    // console.log(str.match(/\d/g));
+    // console.log(str.match(/\D/g));
+
+    // /w word
+    // console.log('HTML-5'.match(/\w/gi));
+    // console.log('HTML-5'.match(/\w/g));
+    // console.log('HTML-5'.match(/\w/g));
+    // console.log('HTML-5'.match(/\w/));
+    // console.log('HTML-5'.match(/\w/).input);
+    // console.log('HTML-5'.match(/.M/g));
+    // console.log('HTML-5'.match(/HT...5/));
+
+    // ^ start 
+    // $ end
+    // console.log(/is/.test('ThIs is just a text'));
+    // console.log(/^is/.test('ThIs is just a text'));
+    // console.log(/^is/.test('is just a text'));
+    // console.log(/is$/.test('ThIs is just a text'));
+    // console.log(/is$/.test('ThIs is'));
+    // console.log(/^text$/.test('ThIs is just a text'));
+
+    // ranges
+    // find only abd or acd or aed
+    // console.log('abcd abd acd aed'.match(/acd|abd/gi)) // | or
+    // console.log('abcd abd acd aed agd'.match(/a.d/gi))
+    // console.log('abcd abd acd aed agd'.match(/a[bc]d/gi))
+    // console.log('abcd a01 b25'.match(/[a-z][a-z]/g))
+    // console.log('abcd a01 B25'.match(/^[a-zA-Z0-9]$/g))
+    // console.log('a'.match(/^[a-zA-Z0-9]$/g))
+
+    // quintifiers (do not leace space in {,})
+    // console.log("Ann's weight is 58513 gr".match(/\d\d\d\d/));
+    // console.log("Ann's weight is 58513 gr".match(/\d{4}/));
+    // console.log("Ann's weight is 58 gr".match(/\d{3,5}/));
+    // console.log("Ann's weight is 585 gr".match(/\d{3,4}/));
+    // console.log("Ann's weight is 58513 gr".match(/\d{3,4}/));
+    // console.log("Ann's weight is 58513 gr".match(/\d{3,}/));
+    // console.log('+30(210)-12-34-567'.match(/\d*/g))  // {0, }
+    // console.log('+30(210)-12-34-567'.match(/\d+/g)) // {1, }
+    // console.log('+30(210)-12-34-567'.match(/\d?/g))
+
+    // lookahed 
+    console.log("it costs 50e and weighs 40Kg".match(/\d+e/g));
+    console.log("it costs 50e and weighs 40Kg".match(/\d+(?=e)/g));
 
 </script>
 
